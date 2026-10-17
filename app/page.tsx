@@ -56,9 +56,9 @@ const features = [
 ];
 
 const shots = [
-  { src: "/screens/01-today-v2.jpg", alt: "Today screen" },
   { src: "/screens/02-drills-v2.jpg", alt: "Drills screen" },
   { src: "/screens/04-frequency-question-v2.jpg", alt: "Frequency question" },
+  { src: "/screens/05-frequency-feedback.jpg", alt: "Frequency answer feedback" },
   { src: "/screens/09-progress-v2.jpg", alt: "Progress screen" },
 ];
 
