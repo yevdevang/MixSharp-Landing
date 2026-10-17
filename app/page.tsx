@@ -63,9 +63,25 @@ const shots = [
   { src: "/screens/09-progress-v2.jpg", alt: "Progress screen" },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: site.name,
+  description: site.description,
+  applicationCategory: "MusicApplication",
+  operatingSystem: "iOS, iPadOS, macOS",
+  url: site.url,
+  image: `${site.url}/logo.png`,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="canvas-glow">
         <div className="mx-auto max-w-6xl px-6 pb-20 pt-20 text-center sm:pt-28">
           <Image

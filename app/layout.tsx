@@ -8,9 +8,25 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const title = `${site.name} — Ear Training App for Mixing & Audio Engineers`;
+
 export const metadata: Metadata = {
-  title: { default: `${site.name} — ${site.tagline}`, template: `%s · ${site.name}` },
+  metadataBase: new URL(site.url),
+  title: { default: title, template: `%s · ${site.name}` },
   description: site.description,
+  keywords: site.keywords,
+  applicationName: site.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title,
+    description: site.description,
+    url: "/",
+    images: [{ url: "/logo.png", width: 256, height: 256, alt: "MixSharp logo" }],
+  },
+  twitter: { card: "summary", title, description: site.description, images: ["/logo.png"] },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
 export const viewport: Viewport = { themeColor: "#0a0c10" };
